@@ -11,7 +11,7 @@ def chestFilter(poi):
         return "Chest with %d items" % len(poi.get('Items', []))
 
 markers = [
-    dict(name="Chests", filterFunction=chestFilter, icon="chest.png"),
+    dict(name="Chests", filterFunction=chestFilter),
     dict(name="Signs", filterFunction=signFilter),
 ]
 
