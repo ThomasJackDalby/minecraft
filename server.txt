@@ -1,23 +1,30 @@
+outputdir = "/datadrive/http"
+texturepath = "/datadrive/resource_packs/MYTHIC+-+1.15.zip"
 worlds["Mordor"] = "/datadrive/worldstorage/world/"
+
+markers = [
+    dict(name="Chests", filterFunction=chestFilter, icon="chest.png"),
+    dict(name="Signs", filterFunction=signFilter),
+]
 
 renders["Normal"] = {
     "world": "Mordor",
     "title": "Overworld",
     "rendermode": "smooth_lighting",
-    "dimension": "overworld"
+    "dimension": "overworld",
+    "markers" : markers
 }
 renders["Cave"] = {
     "world": "Mordor",
     "title": "Caves",
     "rendermode": "cave",
     "dimension": "overworld",
+    "markers" : markers
 }
 renders["Nether"] = {
     "world": "Mordor",
     "title": "Nether",
     "rendermode": "nether_smooth_lighting",
     "dimension": "nether",
+    "markers" : markers
 }
-
-outputdir = "/datadrive/http"
-texturepath = "/datadrive/resource_packs/MYTHIC+-+1.15.zip"
