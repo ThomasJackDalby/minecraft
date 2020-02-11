@@ -10,9 +10,15 @@ def chestFilter(poi):
     if poi['id'] == "Chest" or poi['id'] == 'minecraft:chest':
         return "Chest with %d items" % len(poi.get('Items', []))
 
+def playerFilter(poi):
+    if poi['id'] == 'Player':
+        poi['icon'] = "https://overviewer.org/avatar/%s" % poi['EntityId']
+        return "Last known location for %s" % poi['EntityId']
+
 markers = [
-    dict(name="Chests", filterFunction=chestFilter),
+    dict(name="Players", filterFunction=playerFilter),
     dict(name="Signs", filterFunction=signFilter),
+    dict(name="Chests", filterFunction=chestFilter),
 ]
 
 renders["Normal"] = {
